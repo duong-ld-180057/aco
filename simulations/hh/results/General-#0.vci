@@ -1,0 +1,199 @@
+file 3137767 1686189550                                         
+version 3
+run General-0-20230607-10:29:09-79427
+attr configname General
+attr datetime 20230607-10:29:09
+attr datetimef 20230607-102909
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network myHospitalNetwork
+attr processid 79427
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../inet/images:../../../veins/images
+config cmdenv-express-mode true
+config cmdenv-autoflush true
+config cmdenv-status-frequency 0.1s
+config **.cmdenv-log-level info
+config ned-path .
+config image-path ../../images
+config network myHospitalNetwork
+config debug-on-errors true
+config print-undisposed false
+config sim-time-limit 3600s
+config **.scalar-recording true
+config **.vector-recording true
+config *.playgroundSizeX 2500m
+config *.playgroundSizeY 2500m
+config *.playgroundSizeZ 50m
+config *.annotations.draw true
+config *.manager.updateInterval 0.1s
+config *.manager.host "\"localhost\""
+config *.manager.port 9999
+config *.manager.autoShutdown true
+config *.manager.launchConfig "xmldoc(\"vd012.launchd.xml\")"
+config *.manager.moduleType "\"agv=org.car2x.veins.nodes.Car pedestrian=gr2.veins_inet.IPerson\""
+config *.manager.moduleName "\"agv=node pedestrian=personNode\""
+config *.manager.moduleDisplayString "\"agv='i=veins/node/car;is=vs' pedestrian='i=veins/node/pedestrian;is=vs'\""
+config *.rsu[0].mobility.x 300
+config *.rsu[0].mobility.y 300
+config *.rsu[0].mobility.z 3
+config *.rsu[*].applType "\"HospitalControlApp\""
+config *.rsu[*].appl.headerLength "80 bit"
+config *.rsu[*].appl.sendBeacons false
+config *.rsu[*].appl.dataOnSch false
+config *.rsu[*].nic.phy80211p.antennaOffsetZ "0 m"
+config *.connectionManager.sendDirect true
+config *.connectionManager.maxInterfDist 2600m
+config *.connectionManager.drawMaxIntfDist false
+config *.**.nic.mac1609_4.useServiceChannel true
+config *.**.nic.mac1609_4.txPower 20mW
+config *.**.nic.mac1609_4.bitrate 6Mbps
+config *.**.nic.phy80211p.minPowerLevel -110dBm
+config *.**.nic.phy80211p.useNoiseFloor true
+config *.**.nic.phy80211p.noiseFloor -98dBm
+config *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+config *.**.nic.phy80211p.usePropagationDelay true
+config *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+config *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+config *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+config *.node[*].applType "\"AGVControlApp\""
+config *.node[*].appl.headerLength "80 bit"
+config *.node[*].appl.sendBeacons false
+config *.node[*].appl.dataOnSch true
+config *.node[*].appl.beaconInterval 0.1s
+config *.node[*].veinsmobility.x 0
+config *.node[*].veinsmobility.y 0
+config *.node[*].veinsmobility.z 0
+config *.node[*].veinsmobility.setHostSpeed false
+config *.node[*0].veinsmobility.accidentCount 0
+
+vector 0 myHospitalNetwork.node[0].veinsmobility posx ETV
+vector 1 myHospitalNetwork.node[0].veinsmobility posy ETV
+vector 2 myHospitalNetwork.node[0].veinsmobility speed ETV
+vector 3 myHospitalNetwork.node[0].veinsmobility acceleration ETV
+vector 4 myHospitalNetwork.node[0].veinsmobility co2emission ETV
+vector 5 myHospitalNetwork.node[1].veinsmobility posx ETV
+vector 6 myHospitalNetwork.node[1].veinsmobility posy ETV
+vector 7 myHospitalNetwork.node[1].veinsmobility speed ETV
+vector 8 myHospitalNetwork.node[1].veinsmobility acceleration ETV
+vector 9 myHospitalNetwork.node[1].veinsmobility co2emission ETV
+vector 10 myHospitalNetwork.node[2].veinsmobility posx ETV
+vector 11 myHospitalNetwork.node[2].veinsmobility posy ETV
+vector 12 myHospitalNetwork.node[3].veinsmobility posx ETV
+vector 13 myHospitalNetwork.node[3].veinsmobility posy ETV
+vector 14 myHospitalNetwork.node[2].veinsmobility speed ETV
+vector 15 myHospitalNetwork.node[3].veinsmobility speed ETV
+vector 16 myHospitalNetwork.node[2].veinsmobility acceleration ETV
+vector 17 myHospitalNetwork.node[2].veinsmobility co2emission ETV
+vector 18 myHospitalNetwork.node[3].veinsmobility acceleration ETV
+vector 19 myHospitalNetwork.node[3].veinsmobility co2emission ETV
+vector 20 myHospitalNetwork.node[4].veinsmobility posx ETV
+vector 21 myHospitalNetwork.node[4].veinsmobility posy ETV
+vector 22 myHospitalNetwork.node[5].veinsmobility posx ETV
+vector 23 myHospitalNetwork.node[5].veinsmobility posy ETV
+vector 24 myHospitalNetwork.node[4].veinsmobility speed ETV
+vector 25 myHospitalNetwork.node[5].veinsmobility speed ETV
+vector 26 myHospitalNetwork.node[4].veinsmobility acceleration ETV
+vector 27 myHospitalNetwork.node[4].veinsmobility co2emission ETV
+vector 28 myHospitalNetwork.node[5].veinsmobility acceleration ETV
+vector 29 myHospitalNetwork.node[5].veinsmobility co2emission ETV
+vector 30 myHospitalNetwork.node[6].veinsmobility posx ETV
+vector 31 myHospitalNetwork.node[6].veinsmobility posy ETV
+vector 32 myHospitalNetwork.node[6].veinsmobility speed ETV
+vector 33 myHospitalNetwork.node[6].veinsmobility acceleration ETV
+vector 34 myHospitalNetwork.node[6].veinsmobility co2emission ETV
+vector 35 myHospitalNetwork.node[7].veinsmobility posx ETV
+vector 36 myHospitalNetwork.node[7].veinsmobility posy ETV
+vector 37 myHospitalNetwork.node[7].veinsmobility speed ETV
+vector 38 myHospitalNetwork.node[7].veinsmobility acceleration ETV
+vector 39 myHospitalNetwork.node[7].veinsmobility co2emission ETV
+vector 40 myHospitalNetwork.node[8].veinsmobility posx ETV
+vector 41 myHospitalNetwork.node[8].veinsmobility posy ETV
+vector 42 myHospitalNetwork.node[8].veinsmobility speed ETV
+vector 43 myHospitalNetwork.node[8].veinsmobility acceleration ETV
+vector 44 myHospitalNetwork.node[8].veinsmobility co2emission ETV
+vector 45 myHospitalNetwork.node[9].veinsmobility posx ETV
+vector 46 myHospitalNetwork.node[9].veinsmobility posy ETV
+vector 47 myHospitalNetwork.node[9].veinsmobility speed ETV
+vector 48 myHospitalNetwork.node[9].veinsmobility acceleration ETV
+vector 49 myHospitalNetwork.node[9].veinsmobility co2emission ETV
+vector 50 myHospitalNetwork.node[10].veinsmobility posx ETV
+vector 51 myHospitalNetwork.node[10].veinsmobility posy ETV
+vector 52 myHospitalNetwork.node[10].veinsmobility speed ETV
+vector 53 myHospitalNetwork.node[10].veinsmobility acceleration ETV
+vector 54 myHospitalNetwork.node[10].veinsmobility co2emission ETV
+vector 55 myHospitalNetwork.node[11].veinsmobility posx ETV
+vector 56 myHospitalNetwork.node[11].veinsmobility posy ETV
+vector 57 myHospitalNetwork.node[11].veinsmobility speed ETV
+vector 58 myHospitalNetwork.node[11].veinsmobility acceleration ETV
+vector 59 myHospitalNetwork.node[11].veinsmobility co2emission ETV
+4	6677 47570 56 2095120 0.3 157 1568 1.3336271612027 10.702615822783 2113.4864698123 3020.9111097496
+3	54247 25634 56 2095120 0.3 157 1568 0 10 25.652312381963 231.94863526329
+2	79881 47558 8 2095120 0.2 157 1569 1.9 4.4652312381963 7001.2521190151 31250.592156542
+1	127439 34516 3 2095120 0.1 157 1570 114.1 164.1 191270.8065369 23720350.327379
+0	161955 45763 3 2095120 0.1 157 1570 26.245 637.27195033962 519045.07973539 229295753.17681
+17	207718 50665 1618 2192300 2.3 163.3 1611 1.3485701795507 10.962638745251 2198.4072523141 3227.0175499298
+16	258383 28127 1618 2192300 2.3 163.3 1611 0 10 28.413688521504 270.79015453689
+14	286510 50657 1374 2192300 2.2 163.3 1612 1.9 4.7413688521504 7637.5624831099 36198.480954756
+11	337167 38981 1246 2192300 2.1 163.3 1613 160.9 260.9 366839.01037201 84199084.473661
+10	376148 47865 1246 2192300 2.1 163.3 1613 25.455061197172 636.255 498318.03138504 216466519.88368
+27	424013 56412 19035 2495662 8.3 186 1778 1.3337731695577 10.702615822783 2393.8404231039 3395.5921197644
+26	480425 31536 19035 2495662 8.3 186 1778 0 10 25.679467132371 232.25634690768
+24	511961 56405 18521 2495662 8.2 186 1779 1.9 4.4679467132371 7943.7733627092 35480.714950211
+21	568366 43694 18128 2495662 8.1 186 1780 164.1 264.1 421128.12433469 101356132.85311
+20	612060 52629 18128 2495662 8.1 186 1780 26.245 637.10393893524 602144.97098727 274249047.53035
+34	664689 59318 24633 2613762 9.3 196.3 1871 0.973 9.9235339632794 2548.6493297035 3903.2059147307
+33	724007 33688 24633 2613762 9.3 196.3 1871 -10 10 28.714280164143 1649.4836146184
+32	757695 59334 23947 2613762 9.2 196.3 1872 0 4.3248588876271 8000.4205566684 34475.861663166
+31	817029 45819 23327 2613762 9.1 196.3 1873 164.1 264.1 456830.47394267 113667086.08782
+30	862848 55092 23327 2613762 9.1 196.3 1873 26.221 637.04846994949 611570.75041579 279083443.48389
+19	917940 62964 1618 2658222 2.3 201 1988 0.973 9.0243287059459 2610.1818166345 3660.9253858794
+18	980904 35266 1618 2658222 2.3 201 1988 -10 10 18.541874046292 861.1466848348
+15	1016170 62962 1374 2658222 2.2 201 1989 0 3.7541874046292 7444.5696655048 27924.747789614
+13	1079132 46475 1246 2658222 2.1 201 1990 85.9 160.9 198077.21536493 20938933.252003
+12	1125607 59869 1246 2658222 2.1 201 1990 25.244270785491 636.255 661765.0888325 297307565.64869
+29	1185476 70055 19035 2867102 8.3 228.4 2202 0.973 8.48721422976 2841.5415154159 3908.0390562091
+28	1255531 39609 19035 2867102 8.3 228.4 2202 -10 10 14.27498384442 1337.3600015171
+25	1295140 67825 18521 2867102 8.2 228.4 2203 0 3.327498384442 7248.8420594093 24092.31852751
+23	1362965 52568 18128 2867102 8.1 228.4 2204 110.9 185.9 266330.39562067 33114191.020055
+22	1415533 66877 18128 2867102 8.1 228.4 2204 25.406327786365 636.255 710120.06924335 312854404.52792
+44	1482410 63805 251678 2928366 38.3 238 1998 0.973 11.041683007901 2663.0816557534 3986.6967234791
+43	1546215 36484 251678 2928366 38.3 238 1998 -10 10 21.875369722673 1249.6944242047
+42	1582699 63619 250539 2928366 38.2 238 1999 0 4.0875369722673 7944.9628415561 32434.30197661
+41	1646318 49886 249406 2928366 38.1 238 2000 164.1 264.1 474682.22487253 114583349.38211
+40	1696204 59779 249406 2928366 38.1 238 2000 26.245 637.22948278896 685423.40847448 313351781.70153
+9	1755983 74192 590 2947776 1.3 241.9 2407 0.973 8.2411490285043 3083.3199514804 4081.7208762952
+8	1830175 40956 590 2947776 1.3 241.9 2407 -10 10 12.927084677529 1002.4468343913
+7	1871131 74198 508 2947776 1.2 241.9 2408 0 3.1927084677529 7640.4055570595 24348.455959011
+6	1945329 56794 440 2947776 1.1 241.9 2409 89.1 189.1 292815.78132113 36870221.913787
+5	2002123 70221 440 2947776 1.1 241.9 2409 26.245 637.39521920034 804863.38596889 362248648.0891
+39	2072344 68629 195203 2960417 32.3 245.6 2134 0.973 8.2411490285043 2777.4367007605 3811.0516763685
+38	2140973 38888 195203 2960417 32.3 245.6 2134 -10 10 16.906841916787 802.80751355744
+37	2179861 68615 194391 2960417 32.2 245.6 2135 0 3.5906841916787 7638.3032800772 27406.211166883
+36	2248476 53236 193524 2960417 32.1 245.6 2136 160.9 260.9 486017.35585443 111607729.54415
+35	2301712 64990 193524 2960417 32.1 245.6 2136 25.330875076197 636.255 657956.48315922 285423312.35308
+49	2366702 59409 514359 2964344 62.3 247.3 1851 0.973 11.401852925396 2580.804361585 4751.1397730803
+48	2426111 35469 514359 2964344 62.3 247.3 1851 -10 10 22.977333853056 4012.7197321024
+47	2461580 59724 512949 2964344 62.2 247.3 1852 0 4.1977333853056 7637.2814555726 31832.96162051
+46	2521304 46588 511657 2964344 62.1 247.3 1853 160.9 260.9 421093.85457454 96617290.268934
+45	2567892 56670 511657 2964344 62.1 247.3 1853 25.466402961934 636.255 564757.2250019 244464254.32002
+54	2624562 60563 593921 2974154 68.3 254.6 1864 1.3227556948648 10.702615822783 2485.6341797889 3464.0443315794
+53	2685125 34482 593921 2974154 68.3 254.6 1864 0 10 23.620948539957 213.11126832902
+52	2719607 60558 592422 2974154 68.2 254.6 1865 1.9 4.2620948539957 7944.7206181404 33851.302637779
+51	2780165 47211 591082 2974154 68.1 254.6 1866 164.1 264.1 441472.63214186 106252230.81047
+50	2827376 56606 591082 2974154 68.1 254.6 1866 26.245 637.20719896838 631361.53563017 287583265.53194
+59	2883982 59135 1064152 2986636 98.3 278.6 1804 0.973 10.903433188724 2436.6077023722 3569.0363236373
+58	2943117 33947 1064152 2986636 98.3 278.6 1804 -10 10 25.068146560411 486.86696561768
+57	2977064 59151 1062281 2986636 98.2 278.6 1805 1.9 4.4068146560411 7945.6789465306 34991.197199615
+56	3036215 46229 1060614 2986636 98.1 278.6 1806 164.1 264.1 427277.70278146 102837219.1908
+55	3082444 55322 1060614 2986636 98.1 278.6 1806 26.245 637.29730126111 611211.92961601 278436904.44242
+
