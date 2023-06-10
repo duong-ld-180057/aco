@@ -58,7 +58,8 @@ std::vector<MapNode> readInput(std::string fileName) {
             map.push_back(createNode(from, 0));
         }
         string weightString = line.substr(0, line.find(" "));
-        double weight = 3.0;
+        cout << weightString << " " << stod(weightString) << endl;
+        double weight = stod(weightString);
 
         line.erase(0, line.find(" ") + 1);
         map[fromIndex].weight = weight;

@@ -96,6 +96,6 @@ string ACO::findBestPath(string startEdge, string endEdge) {
     cout << endl;
 
     string result = convertPath(&map, globalBestPath);
-    cout << "Best path: " << result << endl;
+
     return result;
 }

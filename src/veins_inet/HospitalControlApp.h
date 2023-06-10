@@ -27,7 +27,8 @@
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
 //#include "Graph.h"
 #include <vector>
-#include "Djisktra.h"
+//#include "Djisktra.h"
+#include "AntShortestPath.h"
 #include "aco/header/ACO.h"
 using namespace omnetpp;
 
@@ -70,7 +71,6 @@ private:
     //double getVeloOfPerdestrian(std::string crossId, double _time);
     void predictDispearTime();
     Djisktra* djisktra;
-    ACO aco;
     //HarmfulnessDijkstra* djisktra;
     std::string reRoute(AGV *cur, std::string routeId/*, double t*/);
     void sendToAGV(std::string content);

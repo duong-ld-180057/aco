@@ -9,7 +9,7 @@
 // number of ants
 #define NUM_ANTS 10
 // number of iterations
-#define NUM_ITERATIONS 15
+#define NUM_ITERATIONS 1
 // velocity constant
 #define AVERAGE_SPEED 3.0
 

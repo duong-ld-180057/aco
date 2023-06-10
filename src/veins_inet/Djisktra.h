@@ -503,7 +503,7 @@ public:
             int u, double weightEdge, double weightVertex, std::string v, int indexOfV);
     //void generateAdj(std::vector<Quad> adjList[]);
     virtual void planOut(//std::vector<Quad> adjList[],
-            ACO aco, int source, int target, std::string currLane, AGV* cur);
+            int source, int target, std::string currLane, AGV* cur);
     virtual void getItineraries(std::string itineraryFile);
     virtual std::string getName();
 

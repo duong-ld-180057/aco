@@ -213,80 +213,73 @@ void Djisktra::generateAdj(){
 }
 
 void Djisktra::planOut(//std::vector <Quad> adjList[],
-        ACO aco, int source, int target, std::string currLane, AGV* cur){
-    std::string startEdge = vertices[source];
-    std::string endEdge = vertices[target];
-    EV << startEdge << " " << endEdge << endl;
-    std::string result = aco.findBestPath(startEdge, endEdge);
-    EV << result << endl;
-    cur->traces[target] = result;
-//  std::priority_queue<Quad, std::vector<Quad>, std::greater<Quad> > PQ; // Set up priority queue
-//  Quad info; //(-1, "", -1, "");
-//  std::string trace;
-//  double weight;
-//  double tempW;
-//  int tempIndex;
-//  std::string tempTrace;
-//
-//  cur->init(numVertices);
-//  cur->ShortestPath[source] = 0;
-//
-//  PQ.push(std::make_tuple(0, 0, /*vertices[source],*/ source, "")); // Source has weight 0;
-//  //PQ.push(Quad(0, vertices[source], source, ""));
-//
-//  while (!PQ.empty()){
-//    info = PQ.top(); // Use to get minimum weight
-//    PQ.pop(); // Pop before checking for cycles
-//    source = /*info.source; */std::get<2>(info); // get the vertex
-//    if(source == target)
-//      //continue;
-//        break;
-//    weight = /*info.weight; */std::get<0>(info); // current distance
-//    trace = /*info.trace; */std::get<3>(info);
-//
-//
-//    if (cur->visitedVertex.at(source)) // Check for cycle
-//      continue; // Already accounted for it, move on
-//
-//    cur->visitedVertex.at(source) = true; // Else, mark the vertex so that we won't have to visit it again
-//
-//    for (std::vector<Quad>::iterator it = adjList[source].begin(); it != adjList[source].end(); it++){
-//      tempW = /*(*it).weight; */std::get<0>(*it);
-//      tempTrace = /*(*it).trace;*/std::get<3>(*it);
-//      tempIndex = /*(*it).source; */std::get<2>(*it);
-//      if(!Constant::SHORTEST_PATH){
-//          timeWeightVertices[tempIndex] = this->expSmoothing->getDampingValue(tempIndex, timeWeightVertices[tempIndex], vertices[tempIndex]);
-//      }
-//
-//      double newWeight = 0; //weight + tempW + 40*weightVertices[tempIndex];
-//
-//      if(!isValidTrace(currLane, tempTrace)){
-//          continue;
-//      }
-//      if(isAntidromic(trace, tempTrace)){
-//          continue;
-//      }
-//      newWeight = weight + tempW;
-//      if(!Constant::SHORTEST_PATH){
-//          double weightSmoothing = timeWeightVertices[tempIndex];
-//          if(weightSmoothing < 0.1 && tempIndex < this->numIVertices){
-//              newWeight += 100*(this->expSmoothing->useCycicalData(newWeight, vertices[tempIndex], weightSmoothing));
-//          }
-//          else{
-//              newWeight += 100*weightSmoothing;
-//          }
-//      }
-//
-//      if (newWeight < cur->ShortestPath[tempIndex]){ // Check if we can do better
-//         cur->ShortestPath[tempIndex] = newWeight; // Update new distance
-//         cur->traces[tempIndex] = trace; //tempTrace;
-//         PQ.push(make_tuple(cur->ShortestPath[tempIndex], cur->ShortestPath[tempIndex]
-//                        /*vertices[tempIndex]*/, tempIndex, trace + tempTrace)); // Push vertex and weight onto Priority Queue
-//         //PQ.push(Quad(cur->ShortestPath[tempIndex], vertices[tempIndex], tempIndex, trace + tempTrace)); // Push vertex and weight onto Priority Queue
-//      } // Update distance
-//    }
-//  } // While Priority Queue is not empty
+        int source, int target, std::string currLane, AGV* cur){
+  std::priority_queue<Quad, std::vector<Quad>, std::greater<Quad> > PQ; // Set up priority queue
+  Quad info; //(-1, "", -1, "");
+  std::string trace;
+  double weight;
+  double tempW;
+  int tempIndex;
+  std::string tempTrace;
 
+  cur->init(numVertices);
+  cur->ShortestPath[source] = 0;
+
+  PQ.push(std::make_tuple(0, 0, /*vertices[source],*/ source, "")); // Source has weight 0;
+  //PQ.push(Quad(0, vertices[source], source, ""));
+
+  while (!PQ.empty()){
+    info = PQ.top(); // Use to get minimum weight
+    PQ.pop(); // Pop before checking for cycles
+    source = /*info.source; */std::get<2>(info); // get the vertex
+    if(source == target)
+      //continue;
+        break;
+    weight = /*info.weight; */std::get<0>(info); // current distance
+    trace = /*info.trace; */std::get<3>(info);
+
+
+    if (cur->visitedVertex.at(source)) // Check for cycle
+      continue; // Already accounted for it, move on
+
+    cur->visitedVertex.at(source) = true; // Else, mark the vertex so that we won't have to visit it again
+
+    for (std::vector<Quad>::iterator it = adjList[source].begin(); it != adjList[source].end(); it++){
+      tempW = /*(*it).weight; */std::get<0>(*it);
+      tempTrace = /*(*it).trace;*/std::get<3>(*it);
+      tempIndex = /*(*it).source; */std::get<2>(*it);
+      if(!Constant::SHORTEST_PATH){
+          timeWeightVertices[tempIndex] = this->expSmoothing->getDampingValue(tempIndex, timeWeightVertices[tempIndex], vertices[tempIndex]);
+      }
+
+      double newWeight = 0; //weight + tempW + 40*weightVertices[tempIndex];
+
+      if(!isValidTrace(currLane, tempTrace)){
+          continue;
+      }
+      if(isAntidromic(trace, tempTrace)){
+          continue;
+      }
+      newWeight = weight + tempW;
+      if(!Constant::SHORTEST_PATH){
+          double weightSmoothing = timeWeightVertices[tempIndex];
+          if(weightSmoothing < 0.1 && tempIndex < this->numIVertices){
+              newWeight += 100*(this->expSmoothing->useCycicalData(newWeight, vertices[tempIndex], weightSmoothing));
+          }
+          else{
+              newWeight += 100*weightSmoothing;
+          }
+      }
+
+      if (newWeight < cur->ShortestPath[tempIndex]){ // Check if we can do better
+         cur->ShortestPath[tempIndex] = newWeight; // Update new distance
+         cur->traces[tempIndex] = trace; //tempTrace;
+         PQ.push(make_tuple(cur->ShortestPath[tempIndex], cur->ShortestPath[tempIndex]
+                        /*vertices[tempIndex]*/, tempIndex, trace + tempTrace)); // Push vertex and weight onto Priority Queue
+         //PQ.push(Quad(cur->ShortestPath[tempIndex], vertices[tempIndex], tempIndex, trace + tempTrace)); // Push vertex and weight onto Priority Queue
+      } // Update distance
+    }
+  } // While Priority Queue is not empty
 } // DijkstrasAlgorithm
 
 std::string Djisktra::getRoute(std::string trace, std::string currLane, int currentVertex, int nextVertex, int exitVertex){
@@ -338,6 +331,7 @@ std::string Djisktra::getRoute(std::string trace, std::string currLane, int curr
   if(nextVertex == exitVertex)
       route = route + this->getFinalSegment(trace);
 
+  std::cout << "Route: " << route << endl;
   return route;
 }
 
