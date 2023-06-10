@@ -39,12 +39,11 @@ void HospitalControlApp::initialize(int stage)
         sendBeacon= new cMessage("send Beacon");
         graph = new Graph();
         djisktra = //new LatencyEmergencyTime();
-                // new AntShortestPathSystem();
+                 new AntShortestPath();
                 //new DecisionDijkstra();
                     //new HarmfulnessDijkstra();
                     //new ArrivalDijkstra();
-                   new Djisktra();
-        aco = ACO("input_aco.txt");
+//                   new Djisktra();
         this->readCrossing();
     }
     else if (stage == 1) {
@@ -491,7 +490,7 @@ std::string HospitalControlApp::reRoute(AGV *cur, std::string routeId/*, double 
         if(idOfI_Vertex == nextDst){
             return "";
         }
-        this->djisktra->planOut(aco, idOfI_Vertex, nextDst, cur->itinerary->laneId, cur);
+        this->djisktra->planOut(idOfI_Vertex, nextDst, cur->itinerary->laneId, cur);
 
         std::string newRoute = this->djisktra->getRoute(/*this->djisktra*/cur->traces[nextDst], cur->itinerary->laneId, idOfI_Vertex, nextDst, exit);
         if(checkInvalidRoute(newRoute)){
@@ -509,7 +508,7 @@ std::string HospitalControlApp::reRoute(AGV *cur, std::string routeId/*, double 
                     break;
                 }
             }
-            this->djisktra->planOut(aco,nextDst, exit, futureLane, cur);
+            this->djisktra->planOut(nextDst, exit, futureLane, cur);
 
             std::string lastPath =
                     this->djisktra->getRoute(/*this->djisktra*/cur->traces[exit], futureLane, nextDst, exit, exit);

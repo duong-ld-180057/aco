@@ -1,6 +1,7 @@
-../out/clang-release/src/veins_inet/ArrivalDijkstra.o: \
-  veins_inet/ArrivalDijkstra.cc veins_inet/ArrivalDijkstra.h \
-  veins_inet/Djisktra.h veins_inet/Constant.h \
+../out/clang-release/src/veins_inet/AntShortestPath.o: \
+  veins_inet/AntShortestPath.cc veins_inet/AntShortestPath.h \
+  veins_inet/ArrivalDijkstra.h veins_inet/Djisktra.h \
+  veins_inet/Constant.h \
   ../../veins/src/veins/modules/mobility/traci/TraCIMobility.h \
   ../../veins/src/veins/base/modules/BaseMobility.h \
   ../../veins/src/veins/veins.h \
@@ -39,6 +40,8 @@
   ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h \
   veins_inet/Graph.h veins_inet/Crossing.h veins_inet/CustomRectangle.h \
   veins_inet/aco/header/ACO.h veins_inet/aco/header/mapNode.h
+
+veins_inet/AntShortestPath.h:
 
 veins_inet/ArrivalDijkstra.h:
 

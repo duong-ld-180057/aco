@@ -55,6 +55,7 @@
   ../../veins/src/veins/modules/application/traci/TraCIDemoRSU11p.h \
   veins_inet/Zone.h veins_inet/Constant.h \
   ../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h \
+  veins_inet/AntShortestPath.h veins_inet/ArrivalDijkstra.h \
   veins_inet/Djisktra.h veins_inet/Graph.h veins_inet/Crossing.h \
   veins_inet/CustomRectangle.h veins_inet/aco/header/ACO.h \
   veins_inet/aco/header/mapNode.h veins_inet/jute.h
@@ -174,6 +175,10 @@ veins_inet/Zone.h:
 veins_inet/Constant.h:
 
 ../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h:
+
+veins_inet/AntShortestPath.h:
+
+veins_inet/ArrivalDijkstra.h:
 
 veins_inet/Djisktra.h:
 
