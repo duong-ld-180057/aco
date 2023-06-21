@@ -1,8 +1,8 @@
 version 3
-run General-0-20230618-20:32:59-124336
+run General-0-20230621-21:35:49-5385
 attr configname General
-attr datetime 20230618-20:32:59
-attr datetimef 20230618-203259
+attr datetime 20230621-21:35:49
+attr datetimef 20230621-213549
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network myHospitalNetwork
-attr processid 124336
+attr processid 5385
 attr repetition 0
 attr replication #0
 attr resultdir results

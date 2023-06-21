@@ -107,7 +107,14 @@ void SmoothMaxMinAntSystem::planOut( //std::vector <Quad> adjList[],
 //        allPath[key] = result;
 //    }
 
-    result = aco.findBestPath(startEdge, endEdge);
+    if (endEdge == jobDeliverPoint) {
+        double earliestTime = cur->expectedTimeAtStation - 50;
+        double tardinessTime = cur->expectedTimeAtStation + 50;
+        result = aco.findBestPath(startEdge, endEdge, cur->now, earliestTime, tardinessTime);
+    } else {
+        result = aco.findBestPath(startEdge, endEdge, cur->now, -1, -1);
+    }
+
     allPath[key] = result;
 
     cur->traces[target] = result;

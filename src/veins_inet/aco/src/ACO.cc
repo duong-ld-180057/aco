@@ -50,7 +50,7 @@ string convertPath(vector<MapNode> *map, vector<int> path) {
 
 
 
-string ACO::findBestPath(string startEdge, string endEdge) {
+string ACO::findBestPath(string startEdge, string endEdge, double startTime, double earliestTime, double tardinessTime) {
     initPheromone(&map);
     vector<int> globalBestPath;
     double globalBestTargetFnValue = 0;
@@ -72,7 +72,7 @@ string ACO::findBestPath(string startEdge, string endEdge) {
 
                 vector<int> path = findPath(&map, start, end);
 
-                double targetFnValue = calculateDistance(&map, path);
+                double targetFnValue = ln_calculateTargetFunctionValue(map, path, startTime, earliestTime, tardinessTime);
                 cout << "Target: " << targetFnValue << endl;
 
                 if (localBestPath.size() == 0 || (targetFnValue < localBestTargetFnValue && targetFnValue > 0)) {
