@@ -54,7 +54,18 @@
   ../../veins/src/veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.h \
   ../../veins/src/veins/modules/application/traci/TraCIDemo11p.h \
   veins_inet/Graph.h veins_inet/jute.h veins_inet/StateOfAGV.h \
-  veins_inet/Constant.h \
+  lib/nlohmann/json.hpp veins_inet/./sfm/SocialForce.h \
+  veins_inet/./sfm/Agent.h lib/vecmath/vecmath.h \
+  lib/vecmath/AxisAngle4.h lib/vecmath/AxisAngle4_.h \
+  lib/vecmath/Matrix4_.h lib/vecmath/Matrix3_.h lib/vecmath/Point3.h \
+  lib/vecmath/Point4.h lib/vecmath/Tuple3.h lib/vecmath/VmUtil.h \
+  lib/vecmath/vm_conf.h lib/vecmath/Tuple4.h lib/vecmath/Vector3.h \
+  lib/vecmath/Vector4.h lib/vecmath/Quat4_.h lib/vecmath/Color3.h \
+  lib/vecmath/Color4.h lib/vecmath/Matrix3.h lib/vecmath/Matrix4.h \
+  lib/vecmath/Quat4.h lib/vecmath/Point2.h lib/vecmath/Tuple2.h \
+  lib/vecmath/TexCoord2.h lib/vecmath/Vector2.h veins_inet/./sfm/Wall.h \
+  veins_inet/./sfm/MovingObject.h veins_inet/./sfm/SFMAGV.h \
+  veins_inet/Constant.h veins_inet/./sfm/Utility.h \
   ../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h
 
 veins_inet/AGVControlApp.h:
@@ -173,6 +184,66 @@ veins_inet/jute.h:
 
 veins_inet/StateOfAGV.h:
 
+lib/nlohmann/json.hpp:
+
+veins_inet/./sfm/SocialForce.h:
+
+veins_inet/./sfm/Agent.h:
+
+lib/vecmath/vecmath.h:
+
+lib/vecmath/AxisAngle4.h:
+
+lib/vecmath/AxisAngle4_.h:
+
+lib/vecmath/Matrix4_.h:
+
+lib/vecmath/Matrix3_.h:
+
+lib/vecmath/Point3.h:
+
+lib/vecmath/Point4.h:
+
+lib/vecmath/Tuple3.h:
+
+lib/vecmath/VmUtil.h:
+
+lib/vecmath/vm_conf.h:
+
+lib/vecmath/Tuple4.h:
+
+lib/vecmath/Vector3.h:
+
+lib/vecmath/Vector4.h:
+
+lib/vecmath/Quat4_.h:
+
+lib/vecmath/Color3.h:
+
+lib/vecmath/Color4.h:
+
+lib/vecmath/Matrix3.h:
+
+lib/vecmath/Matrix4.h:
+
+lib/vecmath/Quat4.h:
+
+lib/vecmath/Point2.h:
+
+lib/vecmath/Tuple2.h:
+
+lib/vecmath/TexCoord2.h:
+
+lib/vecmath/Vector2.h:
+
+veins_inet/./sfm/Wall.h:
+
+veins_inet/./sfm/MovingObject.h:
+
+veins_inet/./sfm/SFMAGV.h:
+
 veins_inet/Constant.h:
+
+veins_inet/./sfm/Utility.h:
 
 ../../veins/src/veins/modules/application/traci/TraCIDemo11pMessage_m.h:

@@ -8,44 +8,39 @@
 
 using namespace std;
 
-double calculatePenalty(double earliness, double tardiness, double expected) {
-    if (earliness <= expected && expected <= tardiness) {
+double calculatePenalty(double startTime, double earliness, double tardiness, double expected) {
+    double expectedArrivalTime = expected + startTime;
+
+    if (earliness <= expectedArrivalTime && expectedArrivalTime <= tardiness) {
         return 0;
     }
-    if (earliness > expected) {
-        return earliness - expected;
+    if (earliness > expectedArrivalTime) {
+        return earliness - expectedArrivalTime;
     }
-    return expected - tardiness;
+    return expectedArrivalTime - tardiness;
 }
 
-double ln_calculateTargetFunctionValue(vector<MapNode> map, vector<int> path, Job job) {
-    double expectedFirstHalfTime = 0;
-    double expectedTotalTime = 0;
+double ln_calculateTargetFunctionValue(vector<MapNode> map, vector<int> path, double startTime, double earliestTime, double tardinessTime) {
+    double expectedTotalTravelTime = 0;
     double expectedTotalWaitTime = 0;
     double expectedTotalEnvironmentAffect = 0;
-    bool isInFirstHalf = 1;
 
     for (int i = 0; i < path.size(); i++) {
         double expectedTimeInRoute = (map[path[i]].minTravelTime + map[path[i]].maxTravelTime) / 2;
         double expectedWaitTimeInRoute = (map[path[i]].minWaitTime + map[path[i]].maxWaitTime) / 2;
 
-        if (isInFirstHalf) {
-            expectedFirstHalfTime += expectedTimeInRoute;
-            expectedTotalTime += expectedTimeInRoute;
-        } else {
-            expectedTotalTime += expectedTimeInRoute;
-        }
+        expectedTotalTravelTime += expectedTimeInRoute;
         expectedTotalWaitTime += expectedWaitTimeInRoute;
         expectedTotalEnvironmentAffect += map[path[i]].environmentAffect;
-
-        if (path[i] == job.receive) {
-            isInFirstHalf = false;
-        }
     }
 
-    double lateReceivePenalty = calculatePenalty(job.earliestReceiveTime, job.tardinessReceiveTime, expectedFirstHalfTime);
-    double lateEndPenalty = calculatePenalty(job.earliestEndTime, job.tardinessEndTime, expectedTotalTime);
-    double targetFunctionValue = TG_ALPHA*(lateReceivePenalty + lateEndPenalty + expectedTotalWaitTime) - TG_BETA*expectedTotalEnvironmentAffect;
+    double latePenalty = 0;
+
+    if (earliestTime > 0 && tardinessTime > 0) {
+        latePenalty = calculatePenalty(startTime, earliestTime, tardinessTime, expectedTotalTravelTime);
+    }
+
+    double targetFunctionValue = TG_ALPHA*(latePenalty + expectedTotalWaitTime) - TG_BETA*expectedTotalEnvironmentAffect;
 
     return targetFunctionValue;
 }

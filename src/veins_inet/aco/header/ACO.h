@@ -14,7 +14,7 @@ public:
     ACO(string mapFile);
     ~ACO();
     vector<MapNode> map;
-    string findBestPath(string startEdge, string endEdge);
+    string findBestPath(string startEdge, string endEdge, double startTime, double earliestTime, double tardinessTime);
 };
 
 #endif

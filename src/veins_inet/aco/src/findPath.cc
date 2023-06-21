@@ -101,57 +101,57 @@ vector<int> findPath(vector<MapNode> *map, int start, int end) {
 vector<int> findBestPath(vector<MapNode> *map, vector<Job> jobs, int jobIndex, vector<vector<int> > currentPaths) {
     vector<int> globalBestPath;
     double globalBestTargetFnValue = 0;
-
-    int start = jobs[jobIndex].start;
-    int receive = jobs[jobIndex].receive;
-    int end = jobs[jobIndex].end;
-
-    for (int i = 0; i < NUM_ITERATIONS; i++) {
-        cout << endl;
-        cout << "Stage " << i + 1 << endl;
-
-        vector<int> localBestPath;
-        double localBestTargetFnValue = 0;
-
-        // find local best first half path
-        for (int j = 0; j < NUM_ANTS; j++) {
-            try {
-                cout << "Ant " << j + 1 << ": ";
-
-                vector<int> firstHalfPath = findPath(map, start, receive);
-                vector<int> secondHalfPath = findPath(map, receive, end);
-
-                vector<int> path;
-                path.insert(path.end(), firstHalfPath.begin(), firstHalfPath.end() - 1  );
-                path.insert(path.end(), secondHalfPath.begin(), secondHalfPath.end());
-
-                bool isCollision = ln_checkCollision(*map, path, currentPaths);
-
-                if (isCollision) {
-                    cout << "Collision" << endl;
-                    continue;
-                }
-
-                double targetFnValue = ln_calculateTargetFunctionValue(*map, path, jobs[jobIndex]);
-                cout << targetFnValue << endl;
-
-                if (localBestPath.size() == 0 || (targetFnValue < localBestTargetFnValue && targetFnValue > 0)) {
-                    localBestPath = path;
-                    localBestTargetFnValue = targetFnValue;
-                }
-            } catch(const char* msg) {
-                throw msg;
-            }
-        }
-        // update pheromone
-        updatePheromone(map, localBestPath, localBestTargetFnValue);
-
-        // update global best path
-        if (globalBestPath.size() == 0 || (localBestTargetFnValue < globalBestTargetFnValue && localBestTargetFnValue > 0)) {
-            globalBestPath = localBestPath;
-            globalBestTargetFnValue = localBestTargetFnValue;
-        }
-    }
+//
+//    int start = jobs[jobIndex].start;
+//    int receive = jobs[jobIndex].receive;
+//    int end = jobs[jobIndex].end;
+//
+//    for (int i = 0; i < NUM_ITERATIONS; i++) {
+//        cout << endl;
+//        cout << "Stage " << i + 1 << endl;
+//
+//        vector<int> localBestPath;
+//        double localBestTargetFnValue = 0;
+//
+//        // find local best first half path
+//        for (int j = 0; j < NUM_ANTS; j++) {
+//            try {
+//                cout << "Ant " << j + 1 << ": ";
+//
+//                vector<int> firstHalfPath = findPath(map, start, receive);
+//                vector<int> secondHalfPath = findPath(map, receive, end);
+//
+//                vector<int> path;
+//                path.insert(path.end(), firstHalfPath.begin(), firstHalfPath.end() - 1  );
+//                path.insert(path.end(), secondHalfPath.begin(), secondHalfPath.end());
+//
+//                bool isCollision = ln_checkCollision(*map, path, currentPaths);
+//
+//                if (isCollision) {
+//                    cout << "Collision" << endl;
+//                    continue;
+//                }
+//
+//                double targetFnValue = ln_calculateTargetFunctionValue(*map, path, jobs[jobIndex]);
+//                cout << targetFnValue << endl;
+//
+//                if (localBestPath.size() == 0 || (targetFnValue < localBestTargetFnValue && targetFnValue > 0)) {
+//                    localBestPath = path;
+//                    localBestTargetFnValue = targetFnValue;
+//                }
+//            } catch(const char* msg) {
+//                throw msg;
+//            }
+//        }
+//        // update pheromone
+//        updatePheromone(map, localBestPath, localBestTargetFnValue);
+//
+//        // update global best path
+//        if (globalBestPath.size() == 0 || (localBestTargetFnValue < globalBestTargetFnValue && localBestTargetFnValue > 0)) {
+//            globalBestPath = localBestPath;
+//            globalBestTargetFnValue = localBestTargetFnValue;
+//        }
+//    }
 
     return globalBestPath;
 }

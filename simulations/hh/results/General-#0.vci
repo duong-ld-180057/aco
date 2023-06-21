@@ -1,5 +1,5 @@
-file 753723 1686384611                                          
-version 3
+file 753723 1687095379                                          
+version 2
 run General-0-20230610-15:08:11-89594
 attr configname General
 attr datetime 20230610-15:08:11
@@ -77,113 +77,112 @@ config *.node[*].veinsmobility.setHostSpeed false
 config *.node[*0].veinsmobility.accidentCount 0
 
 vector 0 myHospitalNetwork.node[0].veinsmobility posx ETV
-vector 1 myHospitalNetwork.node[0].veinsmobility posy ETV
-vector 2 myHospitalNetwork.node[0].veinsmobility speed ETV
-vector 3 myHospitalNetwork.node[0].veinsmobility acceleration ETV
-vector 4 myHospitalNetwork.node[0].veinsmobility co2emission ETV
-vector 5 myHospitalNetwork.node[1].veinsmobility posx ETV
-vector 6 myHospitalNetwork.node[1].veinsmobility posy ETV
-vector 7 myHospitalNetwork.node[1].veinsmobility speed ETV
-vector 8 myHospitalNetwork.node[1].veinsmobility acceleration ETV
-vector 9 myHospitalNetwork.node[1].veinsmobility co2emission ETV
-vector 10 myHospitalNetwork.node[2].veinsmobility posx ETV
-vector 11 myHospitalNetwork.node[2].veinsmobility posy ETV
-vector 12 myHospitalNetwork.node[3].veinsmobility posx ETV
-vector 13 myHospitalNetwork.node[3].veinsmobility posy ETV
-vector 14 myHospitalNetwork.node[2].veinsmobility speed ETV
-vector 15 myHospitalNetwork.node[3].veinsmobility speed ETV
-vector 16 myHospitalNetwork.node[2].veinsmobility acceleration ETV
-vector 17 myHospitalNetwork.node[2].veinsmobility co2emission ETV
-vector 18 myHospitalNetwork.node[3].veinsmobility acceleration ETV
-vector 19 myHospitalNetwork.node[3].veinsmobility co2emission ETV
-vector 20 myHospitalNetwork.node[4].veinsmobility posx ETV
-vector 21 myHospitalNetwork.node[4].veinsmobility posy ETV
-vector 22 myHospitalNetwork.node[5].veinsmobility posx ETV
-vector 23 myHospitalNetwork.node[5].veinsmobility posy ETV
-vector 24 myHospitalNetwork.node[4].veinsmobility speed ETV
-vector 25 myHospitalNetwork.node[5].veinsmobility speed ETV
-vector 26 myHospitalNetwork.node[4].veinsmobility acceleration ETV
-vector 27 myHospitalNetwork.node[4].veinsmobility co2emission ETV
-vector 28 myHospitalNetwork.node[5].veinsmobility acceleration ETV
-vector 29 myHospitalNetwork.node[5].veinsmobility co2emission ETV
-vector 30 myHospitalNetwork.node[6].veinsmobility posx ETV
-vector 31 myHospitalNetwork.node[6].veinsmobility posy ETV
-vector 32 myHospitalNetwork.node[6].veinsmobility speed ETV
-vector 33 myHospitalNetwork.node[6].veinsmobility acceleration ETV
-vector 34 myHospitalNetwork.node[6].veinsmobility co2emission ETV
-vector 35 myHospitalNetwork.node[7].veinsmobility posx ETV
-vector 36 myHospitalNetwork.node[7].veinsmobility posy ETV
-vector 37 myHospitalNetwork.node[7].veinsmobility speed ETV
-vector 38 myHospitalNetwork.node[7].veinsmobility acceleration ETV
-vector 39 myHospitalNetwork.node[7].veinsmobility co2emission ETV
-vector 40 myHospitalNetwork.node[8].veinsmobility posx ETV
-vector 41 myHospitalNetwork.node[8].veinsmobility posy ETV
-vector 42 myHospitalNetwork.node[8].veinsmobility speed ETV
-vector 43 myHospitalNetwork.node[8].veinsmobility acceleration ETV
-vector 44 myHospitalNetwork.node[8].veinsmobility co2emission ETV
-vector 45 myHospitalNetwork.node[9].veinsmobility posx ETV
-vector 46 myHospitalNetwork.node[9].veinsmobility posy ETV
-vector 47 myHospitalNetwork.node[9].veinsmobility speed ETV
-vector 48 myHospitalNetwork.node[9].veinsmobility acceleration ETV
-vector 49 myHospitalNetwork.node[9].veinsmobility co2emission ETV
-vector 50 myHospitalNetwork.node[10].veinsmobility posx ETV
-vector 51 myHospitalNetwork.node[10].veinsmobility posy ETV
-vector 52 myHospitalNetwork.node[10].veinsmobility speed ETV
-vector 53 myHospitalNetwork.node[10].veinsmobility acceleration ETV
-vector 54 myHospitalNetwork.node[10].veinsmobility co2emission ETV
 0	6361 20768 3 684969 0.1 74.2 742 26.245 311.98080381697 113569.40806356 22970719.831732
+vector 1 myHospitalNetwork.node[0].veinsmobility posy ETV
 1	27129 15626 3 684969 0.1 74.2 742 114.1 164.1 90006.299392733 11099287.112766
+vector 2 myHospitalNetwork.node[0].veinsmobility speed ETV
 2	42755 21685 8 684969 0.2 74.2 741 1.9 4.4652312381963 3304.0406537889 14741.688027796
-3	64440 11353 56 684969 0.3 74.2 740 0 10 25.652312381963 231.94863526329
-4	75793 21697 56 684969 0.3 74.2 740 1.3336271612027 10.702615822783 1009.2431803365 1548.2622663288
+vector 3 myHospitalNetwork.node[0].veinsmobility acceleration ETV
+3	64440 11353 56 684969 0.3 74.2 740 0 10 25.652312381962 231.94863526329
+vector 4 myHospitalNetwork.node[0].veinsmobility co2emission ETV
+4	75793 21697 56 684969 0.3 74.2 740 1.3336271612027 10.702615822783 1009.2431803365 1548.2622663289
+vector 5 myHospitalNetwork.node[1].veinsmobility posx ETV
 5	97490 19331 440 684969 1.1 74.2 732 26.245 189.86059312983 66740.000572157 7725832.9157012
+vector 6 myHospitalNetwork.node[1].veinsmobility posy ETV
 6	116821 16776 440 684969 1.1 74.2 732 114.1 189.1 97572.485458563 13568315.861348
+vector 7 myHospitalNetwork.node[1].veinsmobility speed ETV
 7	133597 21442 508 684969 1.2 74.2 731 1.9 3.1927084677529 2332.2844729919 7442.9993854845
+vector 8 myHospitalNetwork.node[1].veinsmobility acceleration ETV
 8	155039 11235 590 684969 1.3 74.2 730 0 10 12.927084677529 108.56782470942
-9	166274 21440 590 684969 1.3 74.2 730 1.2670226822508 8.2411490285043 934.15290844592 1248.9938704211
+vector 9 myHospitalNetwork.node[1].veinsmobility co2emission ETV
+9	166274 21440 590 684969 1.3 74.2 730 1.2670226822508 8.2411490285043 934.15290844598 1248.9938704212
+vector 10 myHospitalNetwork.node[2].veinsmobility posx ETV
 10	187714 21091 1246 684969 2.1 74.2 722 339.54102592377 636.255 362845.58870101 187987065.31526
+vector 11 myHospitalNetwork.node[2].veinsmobility posy ETV
 11	208805 15958 1246 684969 2.1 74.2 722 185.9 235.9 163956.44060147 37449732.854866
+vector 12 myHospitalNetwork.node[3].veinsmobility posx ETV
 12	224763 20260 1246 684969 2.1 74.2 722 435.40126059953 636.255 399128.86214787 223052531.40836
+vector 13 myHospitalNetwork.node[3].veinsmobility posy ETV
 13	245023 16522 1246 684969 2.1 74.2 722 85.9 160.9 76125.230524644 8620069.1917311
+vector 14 myHospitalNetwork.node[2].veinsmobility speed ETV
 14	261545 21889 1374 684969 2.2 74.2 721 1.9 4.7413688521504 3413.002835844 16168.285429158
+vector 15 myHospitalNetwork.node[3].veinsmobility speed ETV
 15	283434 21901 1374 684969 2.2 74.2 721 1.9 3.7541874046292 2704.0607439284 10145.550686666
+vector 16 myHospitalNetwork.node[2].veinsmobility acceleration ETV
 16	305335 11833 1618 684969 2.3 74.2 720 0 10 28.413688521504 270.79015453689
-17	317168 21897 1618 684969 2.3 74.2 720 1.3485701795507 10.962638745251 996.83122233441 1606.6079474363
+vector 17 myHospitalNetwork.node[2].veinsmobility co2emission ETV
+17	317168 21897 1618 684969 2.3 74.2 720 1.3485701795507 10.962638745251 996.8312223344 1606.6079474363
+vector 18 myHospitalNetwork.node[3].veinsmobility acceleration ETV
 18	339065 11832 1618 684969 2.3 74.2 720 0 10 18.541874046292 172.96361222272
+vector 19 myHospitalNetwork.node[3].veinsmobility co2emission ETV
 19	350897 21897 1618 684969 2.3 74.2 720 1.2959898804246 9.0243287059459 947.78621187931 1355.30050088
+vector 20 myHospitalNetwork.node[4].veinsmobility posx ETV
 20	372794 18666 18128 684969 8.1 74.2 662 26.245 251.52749639534 77732.46625508 12256266.122429
+vector 21 myHospitalNetwork.node[4].veinsmobility posy ETV
 21	391460 15496 18128 684969 8.1 74.2 662 164.1 239.1 148486.55104891 33736826.326996
+vector 22 myHospitalNetwork.node[5].veinsmobility posx ETV
 22	406956 18915 18128 684969 8.1 74.2 662 468.98657866732 636.255 370677.97269744 209154798.6012
+vector 23 myHospitalNetwork.node[5].veinsmobility posy ETV
 23	425871 15378 18128 684969 8.1 74.2 662 110.9 160.9 82130.141266897 10446751.699919
-24	441249 20192 18521 684969 8.2 74.2 661 1.9 4.4679467132371 2948.60893731 13162.586473671
-25	461441 19246 18521 684969 8.2 74.2 661 0 3.327498384442 2117.8395505995 7018.915968878
+vector 24 myHospitalNetwork.node[4].veinsmobility speed ETV
+24	441249 20192 18521 684969 8.2 74.2 661 1.9 4.4679467132371 2948.6089373101 13162.586473671
+vector 25 myHospitalNetwork.node[5].veinsmobility speed ETV
+25	461441 19246 18521 684969 8.2 74.2 661 0 3.327498384442 2117.8395505996 7018.9159688781
+vector 26 myHospitalNetwork.node[4].veinsmobility acceleration ETV
 26	480687 10975 19035 684969 8.3 74.2 660 0 10 25.679467132371 232.25634690768
-27	491662 20199 19035 684969 8.3 74.2 660 1.3337731695577 10.702615822783 902.68201953844 1406.7250495282
+vector 27 myHospitalNetwork.node[4].veinsmobility co2emission ETV
+27	491662 20199 19035 684969 8.3 74.2 660 1.3337731695577 10.702615822783 902.68201953845 1406.7250495283
+vector 28 myHospitalNetwork.node[5].veinsmobility acceleration ETV
 28	511861 11076 19035 684969 8.3 74.2 660 -10 10 14.27498384442 1337.3600015171
-29	522937 19934 19035 684969 8.3 74.2 660 0.973 8.48721422976 877.15375137905 1405.5622160679
+vector 29 myHospitalNetwork.node[5].veinsmobility co2emission ETV
+29	522937 19934 19035 684969 8.3 74.2 660 0.973 8.48721422976 877.15375137904 1405.5622160678
+vector 30 myHospitalNetwork.node[6].veinsmobility posx ETV
 30	542871 17618 23327 684969 9.1 74.2 652 26.221 203.50319977022 58575.517585513 7044756.8033014
+vector 31 myHospitalNetwork.node[6].veinsmobility posy ETV
 31	560489 15953 23327 684969 9.1 74.2 652 164.1 264.1 153697.5169892 37169413.252752
-32	576442 19742 23947 684969 9.2 74.2 651 0 4.3248588876271 2719.767854876 11637.783893347
+vector 32 myHospitalNetwork.node[6].veinsmobility speed ETV
+32	576442 19742 23947 684969 9.2 74.2 651 0 4.3248588876271 2719.767854876 11637.783893348
+vector 33 myHospitalNetwork.node[6].veinsmobility acceleration ETV
 33	596184 11190 24633 684969 9.3 74.2 650 -10 10 28.714280164143 1649.4836146184
+vector 34 myHospitalNetwork.node[6].veinsmobility co2emission ETV
 34	607374 19726 24633 684969 9.3 74.2 650 0.973 9.9235339632794 929.47624618404 1756.0138800097
+vector 35 myHospitalNetwork.node[7].veinsmobility posx ETV
 35	627100 11949 193524 684969 32.1 74.2 422 529.85577342016 636.255 248007.35924487 146058178.04156
+vector 36 myHospitalNetwork.node[7].veinsmobility posy ETV
 36	639049 10404 193524 684969 32.1 74.2 422 185.9 235.9 91206.794696194 19905768.114981
+vector 37 myHospitalNetwork.node[7].veinsmobility speed ETV
 37	649453 12943 194391 684969 32.2 74.2 421 1.9 3.5906841916787 1509.2966763134 5414.1924320716
+vector 38 myHospitalNetwork.node[7].veinsmobility acceleration ETV
 38	662396 7071 195203 684969 32.3 74.2 420 0 10 16.906841916787 147.70446526349
-39	669467 12936 195203 684969 32.3 74.2 420 1.2874912614376 8.2411490285043 553.67685699935 813.5783803237
+vector 39 myHospitalNetwork.node[7].veinsmobility co2emission ETV
+39	669467 12936 195203 684969 32.3 74.2 420 1.2874912614376 8.2411490285043 553.67685699935 813.57838032369
+vector 40 myHospitalNetwork.node[8].veinsmobility posx ETV
 40	682403 9452 249406 684969 38.1 74.2 362 26.245 103.88294823745 20683.416335746 1304704.4657809
+vector 41 myHospitalNetwork.node[8].veinsmobility posy ETV
 41	691855 9556 249406 684969 38.1 74.2 362 164.1 239.1 75871.448090607 16214555.849129
+vector 42 myHospitalNetwork.node[8].veinsmobility speed ETV
 42	701411 11083 250539 684969 38.2 74.2 361 1.9 4.0875369722673 1472.0382360717 6008.6791428754
+vector 43 myHospitalNetwork.node[8].veinsmobility acceleration ETV
 43	712494 6063 251678 684969 38.3 74.2 360 0 10 21.875369722673 203.51701159672
-44	718557 11086 251678 684969 38.3 74.2 360 1.3134917435488 10.702615822783 491.02122902358 808.37190574805
+vector 44 myHospitalNetwork.node[8].veinsmobility co2emission ETV
+44	718557 11086 251678 684969 38.3 74.2 360 1.3134917435488 10.702615822783 491.02122902358 808.37190574809
+vector 45 myHospitalNetwork.node[9].veinsmobility posx ETV
 45	729643 3548 511657 684969 62.1 74.2 122 598.4 636.255 74789.719470517 45867866.575814
+vector 46 myHospitalNetwork.node[9].veinsmobility posy ETV
 46	733191 3032 511657 684969 62.1 74.2 122 185.9 201.7202992789 22997.669659636 4337656.8585774
-47	736223 3691 512949 684969 62.2 74.2 121 1.9 4.1977333853056 504.03253946607 2106.5039377449
+vector 47 myHospitalNetwork.node[9].veinsmobility speed ETV
+47	736223 3691 512949 684969 62.2 74.2 121 1.9 4.1977333853056 504.03253946606 2106.5039377449
+vector 48 myHospitalNetwork.node[9].veinsmobility acceleration ETV
 48	739914 2032 514359 684969 62.3 74.2 120 0 10 22.977333853056 208.86451687256
+vector 49 myHospitalNetwork.node[9].veinsmobility co2emission ETV
 49	741946 3696 514359 684969 62.3 74.2 120 1.3193317501701 10.702615822783 177.63694231648 404.87766879803
+vector 50 myHospitalNetwork.node[10].veinsmobility posx ETV
 50	745642 1868 591082 684969 68.1 74.2 62 26.245 48.380945765546 2380.9149562943 94612.170323247
-51	747510 1498 591082 684969 68.1 74.2 62 164.1 169.56662035882 10216.711584941 1683688.5586994
+vector 51 myHospitalNetwork.node[10].veinsmobility posy ETV
+51	747510 1498 591082 684969 68.1 74.2 62 164.1 169.56662035882 10216.711584941 1683688.5586993
+vector 52 myHospitalNetwork.node[10].veinsmobility speed ETV
 52	749008 1843 592422 684969 68.2 74.2 61 1.9 4.2620948539957 255.90150153175 1080.8262475785
+vector 53 myHospitalNetwork.node[10].veinsmobility acceleration ETV
 53	750851 1023 593921 684969 68.3 74.2 60 0 10 23.620948539957 213.11126832902
-54	751874 1848 593921 684969 68.3 74.2 60 1.3227556948648 10.702615822783 99.382906252878 307.61687013121
-
+vector 54 myHospitalNetwork.node[10].veinsmobility co2emission ETV
+54	751874 1849 593921 684969 68.3 74.2 60 1.3227556948648 10.702615822783 99.38290625288 307.61687013122

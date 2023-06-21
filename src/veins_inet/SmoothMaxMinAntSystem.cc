@@ -13,21 +13,20 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#include "AntShortestPath.h"
+#include "SmoothMaxMinAntSystem.h"
 
-AntShortestPath::AntShortestPath() {
+SmoothMaxMinAntSystem::SmoothMaxMinAntSystem() {
     // TODO Auto-generated constructor stub
     this->initialize();
     getItineraries("itinerary.txt");
     aco = ACO("input_aco.txt");
-
 }
 
-AntShortestPath::~AntShortestPath() {
+SmoothMaxMinAntSystem::~SmoothMaxMinAntSystem() {
     // TODO Auto-generated destructor stub
 }
 
-void AntShortestPath::getItineraries(std::string itineraryFile) {
+void SmoothMaxMinAntSystem::getItineraries(std::string itineraryFile) {
     std::ifstream file(itineraryFile);
     std::string line;
     std::string nameRoute;
@@ -67,41 +66,65 @@ void AntShortestPath::getItineraries(std::string itineraryFile) {
     file.close();
 }
 
-void AntShortestPath::planOut( //std::vector <Quad> adjList[],
+void SmoothMaxMinAntSystem::planOut( //std::vector <Quad> adjList[],
         int source, int target, std::string currLane, AGV *cur) {
     cur->init(numVertices);
     cur->ShortestPath[source] = 0;
 
+    // get job properties
+    std::string jobStartPoint = std::get<0>(
+            *allItinerary[vertices[cur->itinerary->indexStation]]);
+    std::string jobDeliverPoint = std::get<1>(
+            *allItinerary[vertices[cur->itinerary->indexStation]]);
+    std::string jobEndPoint = std::get<2>(
+            *allItinerary[vertices[cur->itinerary->indexStation]]);
     std::string startEdge, endEdge;
 
     if (cur->itinerary->indexStation == target) {
-        startEdge = std::get<0>(
-                *allItinerary[vertices[cur->itinerary->indexStation]]);
-        endEdge = std::get<1>(
-                *allItinerary[vertices[cur->itinerary->indexStation]]);
+        startEdge = jobStartPoint;
+        endEdge = jobDeliverPoint;
     } else {
-        startEdge = std::get<1>(
-                *allItinerary[vertices[cur->itinerary->indexStation]]);
-        endEdge = std::get<2>(
-                *allItinerary[vertices[cur->itinerary->indexStation]]);
+        startEdge = jobDeliverPoint;
+        endEdge = jobEndPoint;
     }
 
     std::string result;
 
     std::string key = cur->id + std::to_string(target);
-    if (allPath.count(key) <= 0) {
-        result = aco.findBestPath(startEdge, endEdge);
-        allPath[key] = result;
-    } else {
+
+    if (allPath.count(key) > 0) {
         result = allPath[key];
+        cur->traces[target] = result;
+        std::cout << "result: " << result << endl;
+        return;
     }
 
+//    if (endEdge == jobDeliverPoint && !cur->passedStation) {
+//        result = aco.findBestPath(startEdge, endEdge);
+//        allPath[key] = result;
+//    } else if (endEdge == jobEndPoint && cur->passedStation) {
+//        result = aco.findBestPath(startEdge, endEdge);
+//        allPath[key] = result;
+//    }
+
+    if (endEdge == jobDeliverPoint) {
+        double earliestTime = cur->expectedTimeAtStation - 50;
+        double tardinessTime = cur->expectedTimeAtStation + 50;
+        result = aco.findBestPath(startEdge, endEdge, cur->now, earliestTime, tardinessTime);
+    } else {
+        result = aco.findBestPath(startEdge, endEdge, cur->now, -1, -1);
+    }
+
+    allPath[key] = result;
+
     cur->traces[target] = result;
+    std::cout << "result: " << result << endl;
 }
 
-std::string AntShortestPath::getRoute(std::string trace, std::string currLane,
+std::string SmoothMaxMinAntSystem::getRoute(std::string trace, std::string currLane,
         int currentVertex, int nextVertex, int exitVertex) {
 
+    std::cout << "trace: " << trace << endl;
     if (currLane.length() > 0) {
         if (currLane[0] == '^') {
             currLane = currLane.substr(1);
@@ -159,6 +182,8 @@ std::string AntShortestPath::getRoute(std::string trace, std::string currLane,
     }
     if (nextVertex == exitVertex)
         route = route + this->getFinalSegment(trace);
+
+    std::cout << "Route: " << route << endl;
     return route;
 }
 
