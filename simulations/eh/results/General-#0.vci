@@ -1,9 +1,9 @@
-file 65127 1686388987                                           
+file 414405 1687095253                                          
 version 3
-run General-0-20230610-16:20:25-95223
+run General-0-20230618-20:32:59-124336
 attr configname General
-attr datetime 20230610-16:20:25
-attr datetimef 20230610-162025
+attr datetime 20230618-20:32:59
+attr datetimef 20230618-203259
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,12 +11,13 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network myHospitalNetwork
-attr processid 95223
+attr processid 124336
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
+config debug-on-errors true
 config image-path ../../../inet/images:../../../veins/images
 config cmdenv-express-mode true
 config cmdenv-autoflush true
@@ -81,9 +82,9 @@ vector 1 myHospitalNetwork.node[0].veinsmobility posy ETV
 vector 2 myHospitalNetwork.node[0].veinsmobility speed ETV
 vector 3 myHospitalNetwork.node[0].veinsmobility acceleration ETV
 vector 4 myHospitalNetwork.node[0].veinsmobility co2emission ETV
-0	3251 10714 273 28660 9.1 61.3 523 601.04760377567 636.255 316336.28915509 191370099.36297
-1	13965 13995 273 28660 9.1 61.3 523 27.015685042858 185.9 63075.969248485 8972814.5652884
-2	27960 14811 278 28660 9.2 61.3 522 1.9 6.4846235942574 1917.8146585186 7083.1497081058
-3	42771 7546 340 28660 9.3 61.3 521 0 10 45.846235942574 398.09809611403
-4	50317 14809 340 28660 9.3 61.3 521 1.2907399774079 16.504723760595 724.2875665786 1540.474981017
+4	3281 97418 340 176705 9.3 335.2 3260 0.973 19.747152134583 4481.7457606056 7971.692827391
+3	100699 51988 340 176705 9.3 335.2 3260 -10 10 25.652312381963 1490.0272637848
+2	152687 97498 278 176705 9.2 335.2 3261 1.9 7.9257854477983 14638.730680806 65978.505400564
+1	250185 77408 273 176705 9.1 335.2 3262 23.4 264.1 306809.87642252 46354970.26009
+0	327593 86811 273 176705 9.1 335.2 3262 25.298829637182 636.255 793712.27908028 332160384.06888
 

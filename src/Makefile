@@ -35,7 +35,6 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 # Object files for local .cc, .msg and .sm files
 OBJS = \
     $O/veins_inet/AGVControlApp.o \
-    $O/veins_inet/AntShortestPath.o \
     $O/veins_inet/ArrivalDijkstra.o \
     $O/veins_inet/Constant.o \
     $O/veins_inet/Crossing.o \
@@ -47,6 +46,7 @@ OBJS = \
     $O/veins_inet/jute.o \
     $O/veins_inet/RouteDirection.o \
     $O/veins_inet/RSUControlApp.o \
+    $O/veins_inet/SmoothMaxMinAntSystem.o \
     $O/veins_inet/StateOfAGV.o \
     $O/veins_inet/TraCITestApp.o \
     $O/veins_inet/TraCITrafficLightApp.o \
@@ -71,6 +71,12 @@ OBJS = \
     $O/veins_inet/aco/src/linear_distribution/ln_targetFunction.o \
     $O/veins_inet/aco/src/ziczac_distribution/zz_collisionCheck.o \
     $O/veins_inet/aco/src/ziczac_distribution/zz_targetFunction.o \
+    $O/veins_inet/sfm/Agent.o \
+    $O/veins_inet/sfm/MovingObject.o \
+    $O/veins_inet/sfm/SFMAGV.o \
+    $O/veins_inet/sfm/SocialForce.o \
+    $O/veins_inet/sfm/Utility.o \
+    $O/veins_inet/sfm/Wall.o \
     $O/veins_inet/VeinsInetSampleMessage_m.o
 
 # Message files

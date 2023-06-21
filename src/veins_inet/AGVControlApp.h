@@ -29,8 +29,19 @@
 #include "Graph.h"
 #include "jute.h"
 #include "StateOfAGV.h"
+#include <lib/nlohmann/json.hpp>
+#include <regex>
+#include <random>
+#include <chrono>
+#include "./sfm/SocialForce.h"
+#include "Constant.h"
+#include "./sfm/Utility.h"
 
 using namespace omnetpp;
+using namespace Utility;
+using json = nlohmann::json;
+
+using namespace std;
 
 namespace veins {
 
@@ -74,6 +85,11 @@ private:
     std::string content = "";
     double velocityBeforeHalt = -1;
     double pausingTime = DBL_MAX;
+
+    double waitingTime = DBL_MAX;
+    bool requested = false;
+    bool deletedOldRes = false;
+
     Dictionary dict;
     double APE = 0;
     int T = 0;
@@ -97,6 +113,55 @@ private:
     double later;
     StateOfAGV* state;
     double wc1 = 0, wc2 = 0, cpuT = 0;
+
+    std::vector<json> mapData;
+    std::vector<std::string> cyclicalData;
+    std::vector<std::string> vertices;
+    void getListVertices(std::string fileName);
+    std::string srcJuncSFM = "#";
+    std::string destJuncSFM = "#";
+    float hallwayLength = -1;
+    std::string curLaneIds = "#";
+    std::string prevStartingEdge = "#";
+    std::string savedEdge = "#";
+    bool isGettingEdge = false;
+    bool isSimulating = false;
+    bool isHalting = false;
+    double timeEnterHallway = 0;
+    double timeLastSimulation = 0;
+    double timeSpent = 0;
+
+    json getHallwayCharc(std::string lanedId);
+    std::vector<json> getOtherAGVInfo();
+    double runSimulation(std::vector<json> agvInfo, int totalAgents);
+
+    // For SFM
+    SocialForce *socialForce;
+    int currTime = 0;
+    int startTime = 0;
+    float speedConsiderAsStop = 0.2;
+
+    json agvInfo;
+
+    json inputData;
+    json timeFrameData;
+    std::vector<float> juncDataGraphMode;
+    float walkwayWidth;
+
+    std::chrono::time_point<std::chrono::high_resolution_clock> startTiming;
+
+    std::vector<int> numOfPeople;
+    int totalAgents = 0;
+    double timeRequired = 0;
+
+    void createWalls(SocialForce *socialForce, std::vector<float> juncData);
+
+    void setAgentsFlow(SocialForce *socialForce, Agent *agent, float desiredSpeed, int caseJump);
+    void createAgents(SocialForce *socialForce, int noAgents);
+
+    void createAGVs(std::vector<json> agvSrcDestCodes);
+
+    bool updateNoGraphics();
 };
 }
 #endif /* VEINS_INET_AGVCONTROLAPP_H_ */

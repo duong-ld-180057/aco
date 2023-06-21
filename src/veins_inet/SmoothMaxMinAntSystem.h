@@ -13,8 +13,8 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#ifndef VEINS_INET_ANTSHORTESTPATH_H_
-#define VEINS_INET_ANTSHORTESTPATH_H_
+#ifndef VEINS_INET_SMOOTHMAXMINANTSYSTEM_H_
+#define VEINS_INET_SMOOTHMAXMINANTSYSTEM_H_
 
 #include "ArrivalDijkstra.h"
 
@@ -22,16 +22,16 @@ typedef std::tuple<std::string, std::string, std::string> Itinerary;
 typedef std::map<std::string, Itinerary*> Itineraries;
 typedef std::map<std::string, std::string> Paths;
 
-class AntShortestPath: public ArrivalDijkstra {
+class SmoothMaxMinAntSystem: public ArrivalDijkstra {
 public:
     Itineraries allItinerary;
     Paths allPath;
     ACO aco;
-    AntShortestPath();
-    virtual ~AntShortestPath();
+    SmoothMaxMinAntSystem();
+    virtual ~SmoothMaxMinAntSystem();
     void planOut(int sourPathsce, int target, std::string currLane, AGV* cur) override;
     void getItineraries(std::string itineraryFile) override;
     std::string getRoute(std::string trace, std::string currLane, int currentVertex, int nextVertex, int exitVertex) override;
 };
 
-#endif /* VEINS_INET_ANTSHORTESTPATH_H_ */
+#endif /* VEINS_INET_SMOOTHMAXMINANTSYSTEM_H_ */

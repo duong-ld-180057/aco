@@ -1,8 +1,8 @@
 version 3
-run General-0-20230610-16:20:25-95223
+run General-0-20230618-20:32:59-124336
 attr configname General
-attr datetime 20230610-16:20:25
-attr datetimef 20230610-162025
+attr datetime 20230618-20:32:59
+attr datetimef 20230618-203259
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,12 +10,13 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network myHospitalNetwork
-attr processid 95223
+attr processid 124336
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
+config debug-on-errors true
 config image-path ../../../inet/images:../../../veins/images
 config cmdenv-express-mode true
 config cmdenv-autoflush true
@@ -75,6 +76,156 @@ config *.node[*].veinsmobility.z 0
 config *.node[*].veinsmobility.setHostSpeed false
 config *.node[*0].veinsmobility.accidentCount 0
 
+par myHospitalNetwork.node[0].appl typename "\"gr2.veins_inet.AGVControlApp\""
+par myHospitalNetwork.node[0].appl headerLength 80bit
+attr unit bit
+par myHospitalNetwork.node[0].appl sendBeacons false
+par myHospitalNetwork.node[0].appl beaconLengthBits 256bit
+attr unit bit
+par myHospitalNetwork.node[0].appl beaconUserPriority 7
+par myHospitalNetwork.node[0].appl beaconInterval 0.1s
+attr unit s
+par myHospitalNetwork.node[0].appl dataLengthBits 1024bit
+attr unit bit
+par myHospitalNetwork.node[0].appl dataOnSch true
+par myHospitalNetwork.node[0].appl dataUserPriority 7
+par myHospitalNetwork.node[0].appl avoidBeaconSynchronization true
+par myHospitalNetwork.node[0].appl sendWSA false
+par myHospitalNetwork.node[0].appl wsaLengthBits 250bit
+attr unit bit
+par myHospitalNetwork.node[0].appl wsaInterval 1s
+attr unit s
+par myHospitalNetwork.node[0].appl appName "\"My first Veins App!\""
+scalar myHospitalNetwork.node[0].appl generatedWSMs 0
+scalar myHospitalNetwork.node[0].appl receivedWSMs 0
+scalar myHospitalNetwork.node[0].appl generatedBSMs 3262
+scalar myHospitalNetwork.node[0].appl receivedBSMs 0
+scalar myHospitalNetwork.node[0].appl generatedWSAs 0
+scalar myHospitalNetwork.node[0].appl receivedWSAs 0
+par myHospitalNetwork.node[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
+par myHospitalNetwork.node[0].nic.phy80211p recordStats false
+par myHospitalNetwork.node[0].nic.phy80211p usePropagationDelay true
+par myHospitalNetwork.node[0].nic.phy80211p noiseFloor -98dBm
+attr unit dBm
+par myHospitalNetwork.node[0].nic.phy80211p useNoiseFloor true
+par myHospitalNetwork.node[0].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/duong/Desktop/omnetpp-6.0.1/workspace/Gr2/simulations/eh//antenna.xml:35"
+par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetX 0m
+attr unit m
+par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetY 0m
+attr unit m
+par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetZ 1.895m
+attr unit m
+par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetYaw 0rad
+attr unit rad
+par myHospitalNetwork.node[0].nic.phy80211p analogueModels "<root>...</root> at /home/duong/Desktop/omnetpp-6.0.1/workspace/Gr2/simulations/eh//config.xml:34"
+par myHospitalNetwork.node[0].nic.phy80211p decider "<root>...</root> at /home/duong/Desktop/omnetpp-6.0.1/workspace/Gr2/simulations/eh//config.xml:34"
+par myHospitalNetwork.node[0].nic.phy80211p minPowerLevel -110dBm
+attr unit dBm
+par myHospitalNetwork.node[0].nic.phy80211p timeRXToTX 0s
+attr unit s
+par myHospitalNetwork.node[0].nic.phy80211p timeRXToSleep 0s
+attr unit s
+par myHospitalNetwork.node[0].nic.phy80211p timeTXToRX 0s
+attr unit s
+par myHospitalNetwork.node[0].nic.phy80211p timeTXToSleep 0s
+attr unit s
+par myHospitalNetwork.node[0].nic.phy80211p timeSleepToRX 0s
+attr unit s
+par myHospitalNetwork.node[0].nic.phy80211p timeSleepToTX 0s
+attr unit s
+par myHospitalNetwork.node[0].nic.phy80211p initialRadioState 0
+par myHospitalNetwork.node[0].nic.phy80211p radioMinAtt 1
+par myHospitalNetwork.node[0].nic.phy80211p radioMaxAtt 0
+par myHospitalNetwork.node[0].nic.phy80211p nbRadioChannels 1
+par myHospitalNetwork.node[0].nic.phy80211p initialRadioChannel 0
+par myHospitalNetwork.node[0].nic.phy80211p ccaThreshold -65dBm
+attr unit dBm
+par myHospitalNetwork.node[0].nic.phy80211p collectCollisionStatistics false
+par myHospitalNetwork.node[0].nic.phy80211p allowTxDuringRx false
+scalar myHospitalNetwork.node[0].nic.phy80211p busyTime 0.0031315021459229
+par myHospitalNetwork.node[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
+par myHospitalNetwork.node[0].nic.mac1609_4 notAffectedByHostState false
+par myHospitalNetwork.node[0].nic.mac1609_4 headerLength 0bit
+attr unit bit
+par myHospitalNetwork.node[0].nic.mac1609_4 address "\"auto\""
+par myHospitalNetwork.node[0].nic.mac1609_4 useServiceChannel true
+par myHospitalNetwork.node[0].nic.mac1609_4 serviceChannel 1
+par myHospitalNetwork.node[0].nic.mac1609_4 bitrate 6000000bps
+attr unit bps
+par myHospitalNetwork.node[0].nic.mac1609_4 syncOffset 0.0003s
+attr unit s
+par myHospitalNetwork.node[0].nic.mac1609_4 txPower 20mW
+attr unit mW
+par myHospitalNetwork.node[0].nic.mac1609_4 queueSize 0
+par myHospitalNetwork.node[0].nic.mac1609_4 dot11RTSThreshold 12000bit
+attr unit bit
+par myHospitalNetwork.node[0].nic.mac1609_4 dot11ShortRetryLimit 7
+par myHospitalNetwork.node[0].nic.mac1609_4 dot11LongRetryLimit 4
+par myHospitalNetwork.node[0].nic.mac1609_4 ackLength 112bit
+attr unit bit
+par myHospitalNetwork.node[0].nic.mac1609_4 useAcks false
+par myHospitalNetwork.node[0].nic.mac1609_4 frameErrorRate 0
+par myHospitalNetwork.node[0].nic.mac1609_4 ackErrorRate 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 ReceivedBroadcasts 4403
+scalar myHospitalNetwork.node[0].nic.mac1609_4 SentPackets 6522
+scalar myHospitalNetwork.node[0].nic.mac1609_4 SentAcknowledgements 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 RetriesExceeded 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 SNIRLostPackets 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 RXTXLostPackets 396
+scalar myHospitalNetwork.node[0].nic.mac1609_4 TotalLostPackets 396
+scalar myHospitalNetwork.node[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 TooLittleTime 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 TimesIntoBackoff 9783
+scalar myHospitalNetwork.node[0].nic.mac1609_4 SlotsBackoff 9838
+scalar myHospitalNetwork.node[0].nic.mac1609_4 NumInternalContention 0
+scalar myHospitalNetwork.node[0].nic.mac1609_4 totalBusyTime 2.123714
+scalar myHospitalNetwork.node[0].nic.mac1609_4 retriesExceeded:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar myHospitalNetwork.node[0].nic.mac1609_4 sentAcks:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar myHospitalNetwork.node[0].nic.mac1609_4 sentPackets:count 6522
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar myHospitalNetwork.node[0].nic.mac1609_4 collisions:count 0
+attr recordingmode count
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar myHospitalNetwork.node[0].nic.mac1609_4 channelBusy:timeavg 0.0065104659717966
+attr recordingmode timeavg
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+par myHospitalNetwork.node[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
+par myHospitalNetwork.node[0].nic connectionManagerName "\"connectionManager\""
+par myHospitalNetwork.node[0].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
+par myHospitalNetwork.node[0].veinsmobility notAffectedByHostState true
+par myHospitalNetwork.node[0].veinsmobility x 0
+par myHospitalNetwork.node[0].veinsmobility y 0
+par myHospitalNetwork.node[0].veinsmobility z 0
+par myHospitalNetwork.node[0].veinsmobility xOrientation 1
+par myHospitalNetwork.node[0].veinsmobility yOrientation 0
+par myHospitalNetwork.node[0].veinsmobility zOrientation 0
+par myHospitalNetwork.node[0].veinsmobility hostPositionOffset 0m
+attr unit m
+par myHospitalNetwork.node[0].veinsmobility setHostSpeed false
+par myHospitalNetwork.node[0].veinsmobility accidentCount 0
+par myHospitalNetwork.node[0].veinsmobility accidentStart 46.3465s
+attr unit s
+par myHospitalNetwork.node[0].veinsmobility accidentDuration "uniform(30s, 60s)"
+attr unit s
+par myHospitalNetwork.node[0].veinsmobility accidentInterval "uniform(30s, 60s)"
+attr unit s
+scalar myHospitalNetwork.node[0].veinsmobility startTime 9.1
+scalar myHospitalNetwork.node[0].veinsmobility totalTime 326.1
+scalar myHospitalNetwork.node[0].veinsmobility stopTime 335.3
+scalar myHospitalNetwork.node[0].veinsmobility minSpeed 1.9
+scalar myHospitalNetwork.node[0].veinsmobility maxSpeed 7.9257854477983
+scalar myHospitalNetwork.node[0].veinsmobility totalDistance 1463.1272067758
+scalar myHospitalNetwork.node[0].veinsmobility totalCO2Emission 448.17457606058
+par myHospitalNetwork.node[0] typename "\"org.car2x.veins.nodes.Car\""
+par myHospitalNetwork.node[0] applType "\"AGVControlApp\""
+par myHospitalNetwork.node[0] nicType "\"Nic80211p\""
+par myHospitalNetwork.node[0] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
 par myHospitalNetwork.obstacles typename "\"org.car2x.veins.modules.obstacle.ObstacleControl\""
 par myHospitalNetwork.obstacles obstacles "<obstacles/> at content:1"
 par myHospitalNetwork.obstacles gridCellSize 250
@@ -128,156 +279,6 @@ par myHospitalNetwork.roadsCanvasVisualizer lineZIndex -1
 par myHospitalNetwork.roadsCanvasVisualizer lineColor "\"firebrick4\""
 par myHospitalNetwork.roadsCanvasVisualizer lineWidth 1
 par myHospitalNetwork.roadsCanvasVisualizer lineWidthZoom false
-par myHospitalNetwork.node[0].appl typename "\"gr2.veins_inet.AGVControlApp\""
-par myHospitalNetwork.node[0].appl headerLength 80bit
-attr unit bit
-par myHospitalNetwork.node[0].appl sendBeacons false
-par myHospitalNetwork.node[0].appl beaconLengthBits 256bit
-attr unit bit
-par myHospitalNetwork.node[0].appl beaconUserPriority 7
-par myHospitalNetwork.node[0].appl beaconInterval 0.1s
-attr unit s
-par myHospitalNetwork.node[0].appl dataLengthBits 1024bit
-attr unit bit
-par myHospitalNetwork.node[0].appl dataOnSch true
-par myHospitalNetwork.node[0].appl dataUserPriority 7
-par myHospitalNetwork.node[0].appl avoidBeaconSynchronization true
-par myHospitalNetwork.node[0].appl sendWSA false
-par myHospitalNetwork.node[0].appl wsaLengthBits 250bit
-attr unit bit
-par myHospitalNetwork.node[0].appl wsaInterval 1s
-attr unit s
-par myHospitalNetwork.node[0].appl appName "\"My first Veins App!\""
-scalar myHospitalNetwork.node[0].appl generatedWSMs 0
-scalar myHospitalNetwork.node[0].appl receivedWSMs 0
-scalar myHospitalNetwork.node[0].appl generatedBSMs 522
-scalar myHospitalNetwork.node[0].appl receivedBSMs 0
-scalar myHospitalNetwork.node[0].appl generatedWSAs 0
-scalar myHospitalNetwork.node[0].appl receivedWSAs 0
-par myHospitalNetwork.node[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
-par myHospitalNetwork.node[0].nic.phy80211p recordStats false
-par myHospitalNetwork.node[0].nic.phy80211p usePropagationDelay true
-par myHospitalNetwork.node[0].nic.phy80211p noiseFloor -98dBm
-attr unit dBm
-par myHospitalNetwork.node[0].nic.phy80211p useNoiseFloor true
-par myHospitalNetwork.node[0].nic.phy80211p antenna "<Antenna type=\"SampledAntenna1D\" id=\"monopole\">...</Antenna> at /home/duong/Desktop/omnetpp-6.0.1/workspace/Gr2/simulations/eh//antenna.xml:35"
-par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetX 0m
-attr unit m
-par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetY 0m
-attr unit m
-par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetZ 1.895m
-attr unit m
-par myHospitalNetwork.node[0].nic.phy80211p antennaOffsetYaw 0rad
-attr unit rad
-par myHospitalNetwork.node[0].nic.phy80211p analogueModels "<root>...</root> at /home/duong/Desktop/omnetpp-6.0.1/workspace/Gr2/simulations/eh//config.xml:34"
-par myHospitalNetwork.node[0].nic.phy80211p decider "<root>...</root> at /home/duong/Desktop/omnetpp-6.0.1/workspace/Gr2/simulations/eh//config.xml:34"
-par myHospitalNetwork.node[0].nic.phy80211p minPowerLevel -110dBm
-attr unit dBm
-par myHospitalNetwork.node[0].nic.phy80211p timeRXToTX 0s
-attr unit s
-par myHospitalNetwork.node[0].nic.phy80211p timeRXToSleep 0s
-attr unit s
-par myHospitalNetwork.node[0].nic.phy80211p timeTXToRX 0s
-attr unit s
-par myHospitalNetwork.node[0].nic.phy80211p timeTXToSleep 0s
-attr unit s
-par myHospitalNetwork.node[0].nic.phy80211p timeSleepToRX 0s
-attr unit s
-par myHospitalNetwork.node[0].nic.phy80211p timeSleepToTX 0s
-attr unit s
-par myHospitalNetwork.node[0].nic.phy80211p initialRadioState 0
-par myHospitalNetwork.node[0].nic.phy80211p radioMinAtt 1
-par myHospitalNetwork.node[0].nic.phy80211p radioMaxAtt 0
-par myHospitalNetwork.node[0].nic.phy80211p nbRadioChannels 1
-par myHospitalNetwork.node[0].nic.phy80211p initialRadioChannel 0
-par myHospitalNetwork.node[0].nic.phy80211p ccaThreshold -65dBm
-attr unit dBm
-par myHospitalNetwork.node[0].nic.phy80211p collectCollisionStatistics false
-par myHospitalNetwork.node[0].nic.phy80211p allowTxDuringRx false
-scalar myHospitalNetwork.node[0].nic.phy80211p busyTime 0.0031422077647244
-par myHospitalNetwork.node[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
-par myHospitalNetwork.node[0].nic.mac1609_4 notAffectedByHostState false
-par myHospitalNetwork.node[0].nic.mac1609_4 headerLength 0bit
-attr unit bit
-par myHospitalNetwork.node[0].nic.mac1609_4 address "\"auto\""
-par myHospitalNetwork.node[0].nic.mac1609_4 useServiceChannel true
-par myHospitalNetwork.node[0].nic.mac1609_4 serviceChannel 1
-par myHospitalNetwork.node[0].nic.mac1609_4 bitrate 6000000bps
-attr unit bps
-par myHospitalNetwork.node[0].nic.mac1609_4 syncOffset 0.0003s
-attr unit s
-par myHospitalNetwork.node[0].nic.mac1609_4 txPower 20mW
-attr unit mW
-par myHospitalNetwork.node[0].nic.mac1609_4 queueSize 0
-par myHospitalNetwork.node[0].nic.mac1609_4 dot11RTSThreshold 12000bit
-attr unit bit
-par myHospitalNetwork.node[0].nic.mac1609_4 dot11ShortRetryLimit 7
-par myHospitalNetwork.node[0].nic.mac1609_4 dot11LongRetryLimit 4
-par myHospitalNetwork.node[0].nic.mac1609_4 ackLength 112bit
-attr unit bit
-par myHospitalNetwork.node[0].nic.mac1609_4 useAcks false
-par myHospitalNetwork.node[0].nic.mac1609_4 frameErrorRate 0
-par myHospitalNetwork.node[0].nic.mac1609_4 ackErrorRate 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 ReceivedUnicastPackets 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 ReceivedBroadcasts 707
-scalar myHospitalNetwork.node[0].nic.mac1609_4 SentPackets 1043
-scalar myHospitalNetwork.node[0].nic.mac1609_4 SentAcknowledgements 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 RetriesExceeded 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 SNIRLostPackets 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 RXTXLostPackets 77
-scalar myHospitalNetwork.node[0].nic.mac1609_4 TotalLostPackets 77
-scalar myHospitalNetwork.node[0].nic.mac1609_4 DroppedPacketsInMac 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 TooLittleTime 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 TimesIntoBackoff 1564
-scalar myHospitalNetwork.node[0].nic.mac1609_4 SlotsBackoff 1580
-scalar myHospitalNetwork.node[0].nic.mac1609_4 NumInternalContention 0
-scalar myHospitalNetwork.node[0].nic.mac1609_4 totalBusyTime 0.340355
-scalar myHospitalNetwork.node[0].nic.mac1609_4 retriesExceeded:count 0
-attr recordingmode count
-attr source org_car2x_veins_modules_mac_sigRetriesExceeded
-scalar myHospitalNetwork.node[0].nic.mac1609_4 sentAcks:count 0
-attr recordingmode count
-attr source org_car2x_veins_modules_mac_sigSentAck
-scalar myHospitalNetwork.node[0].nic.mac1609_4 sentPackets:count 1043
-attr recordingmode count
-attr source org_car2x_veins_modules_mac_sigSentPacket
-scalar myHospitalNetwork.node[0].nic.mac1609_4 collisions:count 0
-attr recordingmode count
-attr source org_car2x_veins_modules_mac_sigCollision
-scalar myHospitalNetwork.node[0].nic.mac1609_4 channelBusy:timeavg 0.0065201807282031
-attr recordingmode timeavg
-attr source org_car2x_veins_modules_mac_sigChannelBusy
-par myHospitalNetwork.node[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
-par myHospitalNetwork.node[0].nic connectionManagerName "\"connectionManager\""
-par myHospitalNetwork.node[0].veinsmobility typename "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
-par myHospitalNetwork.node[0].veinsmobility notAffectedByHostState true
-par myHospitalNetwork.node[0].veinsmobility x 0
-par myHospitalNetwork.node[0].veinsmobility y 0
-par myHospitalNetwork.node[0].veinsmobility z 0
-par myHospitalNetwork.node[0].veinsmobility xOrientation 1
-par myHospitalNetwork.node[0].veinsmobility yOrientation 0
-par myHospitalNetwork.node[0].veinsmobility zOrientation 0
-par myHospitalNetwork.node[0].veinsmobility hostPositionOffset 0m
-attr unit m
-par myHospitalNetwork.node[0].veinsmobility setHostSpeed false
-par myHospitalNetwork.node[0].veinsmobility accidentCount 0
-par myHospitalNetwork.node[0].veinsmobility accidentStart 46.3465s
-attr unit s
-par myHospitalNetwork.node[0].veinsmobility accidentDuration "uniform(30s, 60s)"
-attr unit s
-par myHospitalNetwork.node[0].veinsmobility accidentInterval "uniform(30s, 60s)"
-attr unit s
-scalar myHospitalNetwork.node[0].veinsmobility startTime 9.1
-scalar myHospitalNetwork.node[0].veinsmobility totalTime 52.2
-scalar myHospitalNetwork.node[0].veinsmobility stopTime 61.300240175521
-scalar myHospitalNetwork.node[0].veinsmobility minSpeed 1.9
-scalar myHospitalNetwork.node[0].veinsmobility maxSpeed 6.4846235942574
-scalar myHospitalNetwork.node[0].veinsmobility totalDistance 191.40357001572
-scalar myHospitalNetwork.node[0].veinsmobility totalCO2Emission 72.42875665786
-par myHospitalNetwork.node[0] typename "\"org.car2x.veins.nodes.Car\""
-par myHospitalNetwork.node[0] applType "\"AGVControlApp\""
-par myHospitalNetwork.node[0] nicType "\"Nic80211p\""
-par myHospitalNetwork.node[0] veinsmobilityType "\"org.car2x.veins.modules.mobility.traci.TraCIMobility\""
 par myHospitalNetwork.rsu[0].appl typename "\"gr2.veins_inet.HospitalControlApp\""
 par myHospitalNetwork.rsu[0].appl headerLength 80bit
 attr unit bit
@@ -298,9 +299,9 @@ attr unit bit
 par myHospitalNetwork.rsu[0].appl wsaInterval 1s
 attr unit s
 scalar myHospitalNetwork.rsu[0].appl generatedWSMs 0
-scalar myHospitalNetwork.rsu[0].appl receivedWSMs 521
+scalar myHospitalNetwork.rsu[0].appl receivedWSMs 3260
 scalar myHospitalNetwork.rsu[0].appl generatedBSMs 0
-scalar myHospitalNetwork.rsu[0].appl receivedBSMs 444
+scalar myHospitalNetwork.rsu[0].appl receivedBSMs 2865
 scalar myHospitalNetwork.rsu[0].appl generatedWSAs 0
 scalar myHospitalNetwork.rsu[0].appl receivedWSAs 0
 par myHospitalNetwork.rsu[0].nic.phy80211p typename "\"org.car2x.veins.modules.phy.PhyLayer80211p\""
@@ -343,7 +344,7 @@ par myHospitalNetwork.rsu[0].nic.phy80211p ccaThreshold -65dBm
 attr unit dBm
 par myHospitalNetwork.rsu[0].nic.phy80211p collectCollisionStatistics false
 par myHospitalNetwork.rsu[0].nic.phy80211p allowTxDuringRx false
-scalar myHospitalNetwork.rsu[0].nic.phy80211p busyTime 0.0027288636964721
+scalar myHospitalNetwork.rsu[0].nic.phy80211p busyTime 0.00029292000000001
 par myHospitalNetwork.rsu[0].nic.mac1609_4 typename "\"org.car2x.veins.modules.mac.ieee80211p.Mac1609_4\""
 par myHospitalNetwork.rsu[0].nic.mac1609_4 notAffectedByHostState false
 par myHospitalNetwork.rsu[0].nic.mac1609_4 headerLength 0bit
@@ -368,32 +369,32 @@ par myHospitalNetwork.rsu[0].nic.mac1609_4 useAcks false
 par myHospitalNetwork.rsu[0].nic.mac1609_4 frameErrorRate 0
 par myHospitalNetwork.rsu[0].nic.mac1609_4 ackErrorRate 0
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 ReceivedUnicastPackets 0
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 ReceivedBroadcasts 965
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SentPackets 784
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 ReceivedBroadcasts 6125
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SentPackets 4799
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SentAcknowledgements 0
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 RetriesExceeded 0
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SNIRLostPackets 0
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 RXTXLostPackets 77
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 TotalLostPackets 77
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SNIRLostPackets 1
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 RXTXLostPackets 396
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 TotalLostPackets 397
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 DroppedPacketsInMac 0
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 TooLittleTime 0
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 TimesIntoBackoff 1305
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SlotsBackoff 1106
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 TimesIntoBackoff 8059
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 SlotsBackoff 7086
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 NumInternalContention 0
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 totalBusyTime 0.43077548961
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 totalBusyTime 2.679629143286
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 retriesExceeded:count 0
 attr recordingmode count
 attr source org_car2x_veins_modules_mac_sigRetriesExceeded
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 sentAcks:count 0
 attr recordingmode count
 attr source org_car2x_veins_modules_mac_sigSentAck
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 sentPackets:count 784
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 sentPackets:count 4799
 attr recordingmode count
 attr source org_car2x_veins_modules_mac_sigSentPacket
 scalar myHospitalNetwork.rsu[0].nic.mac1609_4 collisions:count 0
 attr recordingmode count
 attr source org_car2x_veins_modules_mac_sigCollision
-scalar myHospitalNetwork.rsu[0].nic.mac1609_4 channelBusy:timeavg 0.0050555020457123
+scalar myHospitalNetwork.rsu[0].nic.mac1609_4 channelBusy:timeavg 0.00053418809535723
 attr recordingmode timeavg
 attr source org_car2x_veins_modules_mac_sigChannelBusy
 par myHospitalNetwork.rsu[0].nic typename "\"org.car2x.veins.modules.nic.Nic80211p\""
